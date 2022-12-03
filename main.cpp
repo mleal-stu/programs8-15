@@ -631,7 +631,4 @@ int main() {
 	}
 
 	std::cout << "\n\nCoded by Miles Leal\n\n" << std::endl;
-
-	std::cout << "\n\nPress enter to exit.\n\n";
-	std::cin >> input;
 }
