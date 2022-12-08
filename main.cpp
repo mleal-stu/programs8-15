@@ -346,19 +346,19 @@ public:
 			// initializes the book member variable inputs
 
 			std::getline(inputFile, line);
-#ifdef _DEBUG || DEBUG
+#if defined _DEBUG || defined DEBUG
 			outputColoredText("\nLine number: {" + std::to_string(lineNumber) + "}\n", "debug");
 #endif
 			// gets a line from the file
 
 			for (unsigned int i = 0; i < line.size(); i++) {
-#ifdef _DEBUG || DEBUG
+#if defined _DEBUG || defined DEBUG
 				outputColoredText(std::to_string(lineNumber) + " : " + std::to_string(section) + " : " + std::to_string(i) + " : "+line[i]+" : DEBUG\n", "debug");
 #endif
 				// for debug only: displays the line number, section, index, and then character 
 
 				if (line.at(i) == (',') || i == line.size() - 1) {
-#ifdef _DEBUG || DEBUG
+#if defined _DEBUG || defined DEBUG
 					outputColoredText(std::to_string(lineNumber) + " : " + std::to_string(section) + " : " + std::to_string(i) + " : encountered comma/newline, attempting to assign to variable...", "debug");
 					outputColoredText(("\n" + std::to_string(lineNumber) + " : " + std::to_string(section) + " : " + std::to_string(i) + " : DEBUG: END OF LINE T?F : " + std::to_string((i == line.size() - 1))), "debug");
 #endif
@@ -376,7 +376,7 @@ public:
 						try {
 							if (section == 0) {
 								author = trimCopy(charList);
-#ifdef _DEBUG || DEBUG
+#if defined _DEBUG || defined DEBUG
 								outputColoredText(std::to_string(lineNumber) + " : " + std::to_string(section) + " : " + std::to_string(i) + " : Author: "+author+"\n", "debug");
 #endif
 								if (author == "") { throw 200; }
@@ -399,7 +399,7 @@ public:
 
 						try {
 							title = trimCopy(charList);
-#ifdef _DEBUG || DEBUG
+#if defined _DEBUG || defined DEBUG
 							outputColoredText(std::to_string(lineNumber) + " : " + std::to_string(section) + " : " + std::to_string(i) + " : Title: " + title + "\n", "debug");
 #endif
 							if (title == "") { throw 201; }
@@ -441,7 +441,7 @@ public:
 								// issue was here. for some reason, my trim() function refused to properly trim the string, so i instead did... that
 
 								occurences = std::stoi(charList);
-#ifdef _DEBUG || DEBUG
+#if defined _DEBUG || defined DEBUG
 								outputColoredText(std::to_string(lineNumber) + " : " + std::to_string(section) + " : " + std::to_string(i) + " : Occurences: " + std::to_string(occurences) + "\n", "debug");
 #endif
 								if (occurences == 0) { throw 202; }
@@ -533,7 +533,7 @@ private:
 
 			for (int i = 1; i <= input; i++) {
 				sum += i;
-#ifdef _DEBUG || DEBUG
+#if defined _DEBUG || defined DEBUG
 				outputColoredText(("DEBUG: iteration "+std::to_string(i)+", current sum: "+std::to_string(sum)+"\n"), "debug");
 #endif
 			}
@@ -546,7 +546,7 @@ private:
 			
 			for (int i = 1; i <= input; i++) {
 				output = output * i;
-#ifdef _DEBUG || DEBUG
+#if defined _DEBUG || defined DEBUG
 				outputColoredText(("DEBUG: iteration " + std::to_string(i) + ", current product: " + std::to_string(output) + "\n"), "debug");
 #endif
 			}
