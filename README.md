@@ -2,6 +2,8 @@
 
 contains the code for programs 8-15. run the app, then select the program desired via keyboard input
 
+in main.cpp,
+
 goto line 078 for program 8
 
 goto line 109 for program 9a
